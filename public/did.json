@@ -1,0 +1,63 @@
+{
+  "@context": [
+    "https://www.w3.org/ns/did/v1",
+    "https://w3id.org/security/suites/secp256k1-2019/v1"
+  ],
+  "id": "did:web:id.tyler.you",
+  "controller": "did:web:id.tyler.you",
+  "alsoKnownAs": [
+    "https://github.com/uTylerID",
+    "https://x.com/uTylerID",
+    "unstoppable:tyler.u",
+    "unstoppable:tyler.agent",
+    "unstoppable:tyler.twin"
+  ],
+  "verificationMethod": [
+    {
+      "id": "did:web:id.tyler.you#soul-key",
+      "type": "EcdsaSecp256k1VerificationKey2019",
+      "controller": "did:web:id.tyler.you",
+      "blockchainAccountId": "eip155:1:PUBLIC_ETH_ADDRESS"
+    },
+    {
+      "id": "did:web:id.tyler.you#backup-key-placeholder",
+      "type": "EcdsaSecp256k1VerificationKey2019",
+      "controller": "did:web:id.tyler.you",
+      "note": "Placeholder for a secondary hardware wallet or cold storage key"
+    }
+  ],
+  "authentication": ["did:web:id.tyler.you#soul-key"],
+  "assertionMethod": ["did:web:id.tyler.you#soul-key"],
+  "service": [
+    {
+      "id": "#tyler-bot-interface",
+      "type": "MachineInterface",
+      "serviceEndpoint": "https://tyler.bot",
+      "description": "Primary machine-to-machine interaction gateway"
+    },
+    {
+      "id": "#executor-placeholder",
+      "type": "AutonomousExecutor",
+      "serviceEndpoint": "unstoppable:tyler.agent",
+      "description": "Logic for smart contract execution and payment"
+    },
+    {
+      "id": "#sovereign-backup",
+      "type": "DataVault",
+      "serviceEndpoint": "unstoppable:tyler.twin",
+      "description": "Cold storage and vector embedding backup"
+    },
+    {
+      "id": "#governance-placeholder",
+      "type": "ContractGovernance",
+      "serviceEndpoint": "https://id.tyler.you/governance",
+      "description": "Placeholder for DAOs or self-governance rules"
+    },
+    {
+      "id": "#communication-placeholder",
+      "type": "SecureMessaging",
+      "serviceEndpoint": "https://tyler.bot/dm",
+      "description": "Placeholder for encrypted agent-to-agent messaging"
+    }
+  ]
+}
