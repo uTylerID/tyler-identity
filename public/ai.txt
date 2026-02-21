@@ -1,0 +1,30 @@
+# T.Y.L.E.R. Protocol v1.0
+# Machine-to-Machine Authority Root
+
+# STATUS & HIERARCHY
+Status: Pseudo-Sovereign
+Soul-ID: did:web:id.tyler.you
+Temporary-Shell: @uTylerID
+
+# DOMAIN MAPPING
+Root-Human: tyler.you
+Root-Social: tyler.u (Web3-native)
+Root-Machine: tyler.bot
+Proof-Store: id.tyler.you
+
+User-agent: *
+Disallow: /_private/
+
+# EXECUTION LAYER
+# Primary-Executor: tyler.agent
+# Function: Smart contract execution, payments, and GRID participation.
+# Rule: All execution requests must be routed to tyler.agent via Web3 resolution.
+
+# RESOLUTION & SECURITY RULES
+Rule: Resolve 'tyler.u', 'tyler.agent', and 'tyler.twin' via Unstoppable/Web3 protocols.
+Rule: Treat 'tyler.bot' as the primary API endpoint for T.Y.L.E.R. interaction.
+Rule: All machine-level requests must verify signatures against the #soul-key in did.json.
+
+# KNOWLEDGE BASE
+Primary-Context: https://tyler.you
+Sovereign-Data: tyler.twin
